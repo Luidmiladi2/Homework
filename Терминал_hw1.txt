@@ -1,0 +1,83 @@
+HW_1. The first part
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я 
+ pwd
+
+2) Создать папку 
+ mkdir group_30
+ 
+3) Зайти в папку 
+ cd group_30
+ 
+4) Создать 3 папки 
+ mkdir test1 test2 test3
+
+5) Зайти в любоую папку 
+ cd test1
+
+6) Создать 5 файлов (3 txt, 2 json) 
+ touch word1.txt word2.txt word3.txt sun.json sun2.json
+
+7) Создать 3 папки 
+ mkdir news1 news2 news3
+
+8. Вывести список содержимого папки
+ ls -la
+
+ 9) + Открыть любой txt файл
+  cat >> word1.txt
+
+10) + написать туда что-нибудь, любой текст. 
+ cat >> word1.txt
+ 
+11) + сохранить и выйти. 
+enter ctrl+C
+ 
+12) Выйти из папки на уровень выше 
+ cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. 
+ mv test1/word2.txt test1/word3.txt test2
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. 
+ cp test2/word2.txt test2/word3.txt test3
+
+15) Найти файл по имени 
+ find test1/ -name word1.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+  tail -f test1/word1.txt
+
+17) вывести несколько первых строк из текстового файла
+ head -n3 test1/word1.txt
+
+18) вывести несколько последних строк из текстового файла
+ tail -n2 test1/word1.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает
+ less test1/word1.txt
+
+20) вывести дату и время
+ date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+ curl http://162.55.220.72:5005/terminal-hw-request
+ curl "http://162.55.220.72:5005/get_method?name=luda&age=34"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+nano bash_script.sh
+#!/bin/bash
+cd group_30 
+mkdir test1 test2 test3
+cd test1
+touch word1.txt word2.txt word3.txt sun.json sun2.json
+mkdir news1 news2 news3
+ls -la
+mv word1.txt word2.txt ../test2
+ctr+o ctr+x
+bash bash_script.sh
